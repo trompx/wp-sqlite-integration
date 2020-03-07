@@ -281,6 +281,7 @@ class AlterQuery {
 		$tokenized_query = $queries;
 		if (stripos($tokenized_query['command'], 'add column') !== false) {
 			$column_def = $this->convert_field_types($tokenized_query['column_name'], $tokenized_query['column_def']);
+			$column_def = preg_replace('/ AFTER.*/im', '', $column_def);
 			$query = "ALTER TABLE {$tokenized_query['table_name']} ADD COLUMN {$tokenized_query['column_name']} $column_def";
 		} elseif (stripos($tokenized_query['command'], 'rename') !== false) {
 			$query = "ALTER TABLE {$tokenized_query['table_name']} RENAME TO {$tokenized_query['column_name']}";
