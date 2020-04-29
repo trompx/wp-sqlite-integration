@@ -124,7 +124,7 @@ class SQLiteIntegration {
 		// See the docstring for download_backup_db() in utilities/utility.php
 		// We need this registration process.
 		add_action('admin_init', array('SQLiteIntegrationUtils', 'download_backup_db'));
-		add_action('plugins_loaded', array($this, 'textdomain_init'));
+		add_action('muplugins_loaded', array($this, 'textdomain_init'));
 	}
 
 	/**
