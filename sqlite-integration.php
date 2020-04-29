@@ -274,7 +274,7 @@ class SQLiteIntegration {
 		//  $moFile = dirname(__FILE__) . "/languages/sqlite-wordpress-" . $current_locale . ".mo";
 		//  if(@file_exists($moFile) && is_readable($moFile)) load_textdomain('sqlite-wordpress', $moFile);
 		//}
-		load_plugin_textdomain($utils->text_domain, false, SQLiteDir.'/languages/');
+		load_muplugin_textdomain($utils->text_domain, false, SQLiteDir.'/languages/');
 	}
 
 	/**
